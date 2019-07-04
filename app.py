@@ -208,7 +208,7 @@ def depart_display_indicator():
             writer.writerow(x)
     csvFile.close()
 
-    send_mail("sinha.debojyoti7575@gmail.com")
+    send_mail("") #Add E-Mail ID to send E-Mail
 
     return render_template("admin/depart_admin_dashboard.html", username=session['username'])
 
@@ -450,7 +450,7 @@ def export_to_CSV():
             writer.writerow(x)
     csvFile.close()
 
-    send_mail("sinha.debojyoti7575@gmail.com")
+    send_mail("") #Add E-Mail ID to send MIS
 
     return render_template("admin/admin-dashboard.html", username=session['username'])
 

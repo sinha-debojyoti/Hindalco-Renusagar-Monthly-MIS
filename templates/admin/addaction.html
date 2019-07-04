@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="container">
+    <br>
+    <form method="post" action="/return_admin">
+        <button type="submit" class="btn btn-primary">BACK</button>
+    </form>
+    <br>
+    <form method="post" action="/add_action_list">
+        <div class="form-group">
+            <label>Enter Indicator</label>
+            <input name="action" class="form-control" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label>Enter Unit</label>
+            <input name="unit" class="form-control" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label>Enter Target</label>
+            <input name="target" class="form-control" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label>Select User</label>
+            <select name="user" class="form-control">
+                {% for user in users %}
+                <option>{{ user }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-success" type="submit">Add Action</button>
+    </form>
+</div>
+
+{% endblock %}

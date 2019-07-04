@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="container">
+    <br>
+    <form method="post" action="/return_depart_admin">
+        <button type="submit" class="btn btn-primary">BACK</button>
+    </form>
+    <br>
+
+    <br>
+    <div class="card" style="margin-left: 10%;margin-right: 10%;margin-bottom: 20%">
+        <div class="card-header">
+            <big>Add User To Your List</big>
+        </div>
+
+        {% if exists %}
+            <div class="card-body">
+                {% for exist in exists %}
+                <span class="badge badge-pill badge-warning mr-1">{{ exist }}</span>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+
+        <div class="card-body">
+            <form method="post" action="/depart_add_user_list">
+                <div class="form-group">
+                    <label>Select Your User</label>
+                    <select class="form-control" name="user">
+                        {% for user in users %}
+                        <option>{{ user }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button class="btn btn-success btn-lg btn-block" type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

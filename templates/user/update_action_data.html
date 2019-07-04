@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="container">
+    <br>
+    <form method="post" action="/return_user">
+        <button type="submit" class="btn btn-primary">BACK</button>
+    </form>
+    </br>
+
+    <div class="card" style="margin-left: 10%;margin-right: 10%;margin-bottom: 20%">
+        <div class="card-header">
+            <big>Add Indicator</big>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    Your Action
+                </div>
+                <div class="col">
+                    : {{ action }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Data Unit
+                </div>
+                <div class="col">
+                    : {{ unit }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Your Target
+                </div>
+                <div class="col">
+                    : {{ target }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Completed
+                </div>
+                <div class="col">
+                    : {{ month_value }}
+                </div>
+            </div>
+            <form action="/update_action" method="post">
+                <input type="hidden" name="action" value="{{ action }}">
+                <div class="form-group">
+                    <label>Selected Month</label>
+                    <input class="form-control" type="text" name="month" value="{{ month }}" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Enter Value</label>
+                    <input required class="form-control" name="value" autocomplete="off" type="text">
+                </div>
+                <button type="submit" class="btn btn-success btn-lg btn-block">Update</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

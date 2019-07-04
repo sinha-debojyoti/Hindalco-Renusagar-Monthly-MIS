@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="container">
+    <div class="card" style="margin-left: 10%;margin-right: 10%;margin-top: 10%;margin-bottom: 20%">
+        <div class="card-body">
+
+            <form action="/export_to_CSV">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Export CSV To E-Mail</button>
+            </form>
+
+            <br>
+            <form method="post" action="/display_action">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Display Indicator</button>
+            </form>
+
+            <br>
+            <form method="post" action="/add_admin">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Add Admin</button>
+            </form>
+            <br>
+
+            <form method="post" action="/add_user">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Add User</button>
+            </form>
+            <br>
+
+
+
+            <form method="post" action="/update_password">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Update Password</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

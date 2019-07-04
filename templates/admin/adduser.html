@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="container">
+    <br>
+    <form method="post" action="/return_admin">
+        <button type="submit" class="btn btn-primary">BACK</button>
+    </form>
+
+    <br>
+    <div class="card" style="margin-left: 10%;margin-right: 10%;margin-bottom: 20%">
+        <div class="card-header">
+            <big>Enter New E-Mail-ID And Password</big>
+        </div>
+        <div class="card-body">
+            <form method="post" action="/add_user_list">
+                <div class="form-group">
+                    <label>Enter New E-Mail ID</label>
+                    <input required class="form-control" name="username" type="text" autocomplete="off"
+                           placeholder="Enter E-Mail ID">
+                </div>
+                <div class="form-group">
+                    <label>Enter New Password</label>
+                    <input required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" name="password"
+                           type="password" placeholder="Enter Password" data-toggle="tooltip"
+                           title="Requied 1 Uppercase, 1 Lowercase, 1 Number, Minimum Length 8">
+                </div>
+                <button class="btn btn-success btn-lg btn-block" type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

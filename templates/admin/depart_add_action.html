@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="container">
+    <br>
+    <form method="post" action="/return_depart_admin">
+        <button type="submit" class="btn btn-primary">BACK</button>
+    </form>
+
+    <br>
+    <div class="card" style="margin-left: 10%;margin-right: 10%;margin-bottom: 20%">
+        <div class="card-header">
+            <big>Add Indicator To Your User</big>
+        </div>
+        <div class="card-body">
+            <form method="post" action="/add_depart_action_list">
+                <div class="form-group">
+                    <label>Enter Indicator</label>
+                    <input required name="action" class="form-control" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Enter Unit</label>
+                    <input required name="unit" class="form-control" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Enter Target</label>
+                    <input required name="target" class="form-control" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Select User</label>
+                    <select required name="user" class="form-control">
+                        {% for user in users %}
+                        <option>{{ user }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button class="btn btn-success btn-lg btn-block" type="submit">Add Action</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

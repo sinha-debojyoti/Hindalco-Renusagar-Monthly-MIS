@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="container">
+    <br>
+    <form method="post" action="/return_admin">
+        <button type="submit" class="btn btn-primary">BACK</button>
+    </form>
+
+
+    <br>
+    <div class="card" style="margin-left: 10%;margin-right: 10%;margin-bottom: 20%">
+        <div class="card-header">
+            <big>Add Admin</big>
+        </div>
+        {% if admin != None %}
+            <div class="card-body">
+                {% for admin in admins %}
+                    <span class="badge badge-pill badge-warning">{{ admin }}</span>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="card-body">
+            <form method="post" action="/add_admin_list">
+                <div class="form-group">
+                    <label>Select Your Admin</label>
+                    <select class="form-control" name="admin">
+                        {% for user in users %}
+                        <option>{{ user }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button class="btn btn-success btn-lg btn-block" type="submit">Add Admin</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/static/image/favicon.ico"/>
+    <title>Hindalco Renusagar</title>
+
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <script src="/static/jquery.min.js"></script>
+    <script src="/static/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand text-white">
+        <img src="/static/image/logo.png" width="40" height="40">
+        <big><b>Hindalco</b></big>
+    </a>
+</nav>
+
+
+<div class="container">
+    <div class="card" style="margin-left: 10%;margin-right: 10%;margin-top: 10%;margin-bottom: 20%">
+        <div class="card-header">
+            <center><big>Enter Your E-Mail ID And Password</big></center>
+        </div>
+        <div class="card-body">
+            <form method="post" action="/login_admin">
+                {% if message %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+                {% endif %}
+                <div class="form-group">
+                    <label>E-Mail ID</label>
+                    <input class="form-control" name="username" autocomplete="off" type="texr"
+                           placeholder="Enter Your E-Mail ID">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input class="form-control" name="password" autocomplete="off" type="password"
+                           placeholder="Enter Your Password">
+                </div>
+                <button class="btn btn-success btn-lg btn-block" type="submit" name="submit">LOG IN</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer class="page-footer font-small bg-light fixed-bottom">
+    <div class="footer-copyright text-center py-3">
+        © 2019 Copyright : Made with <img src="/static/image/love.png" width="15" height="15"> in <b>Renusagar</b>
+    </div>
+</footer>
+
+</body>
+</html>

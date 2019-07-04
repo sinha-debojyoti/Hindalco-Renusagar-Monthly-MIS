@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="container">
+
+    <div class="container">
+        <div class="card" style="margin-left: 10%;margin-right: 10%;margin-top: 10%;margin-bottom: 20%">
+            <div class="card-body">
+
+                <form action="/depart_display_indicator">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Export CSV To E-Mail</button>
+                </form>
+                <br>
+
+                <form method="post" action="/depart_add_user">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Add User</button>
+                </form>
+                <br>
+
+                <form method="post" action="/depart_add_action">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Add Indicator</button>
+                </form>
+                <br>
+
+                <form method="post" action="/depart_display_action">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Display Indicator</button>
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    {% endblock %}

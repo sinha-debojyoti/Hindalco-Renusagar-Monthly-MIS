@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="container">
+
+    <div class="card" style="margin-left: 10%;margin-right: 10%;margin-top: 10%;margin-bottom: 20%">
+        <div class="card-body">
+            <form action="/update-action" method="post">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Update Data</button>
+            </form>
+            <br>
+            <form action="/display_user_indicator" method="post">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Display Indicator</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
